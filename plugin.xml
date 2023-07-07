@@ -1,0 +1,12 @@
+<plugin id="com.example.bootstrap-offline" version="1.0.0">
+  <require plugin="net.infotexture.dita-bootstrap" />
+  <feature extension="ant.import" file="process_offline.xml" />
+  <feature extension="bootstrap.process.pre" value="bootstrap.offline" />
+
+  <transtype name="html5-bootstrap" extends="html5">
+    <param name="offline.mode" type="enum">
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+  </transtype>
+</plugin>

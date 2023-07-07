@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+  name="dita.plugin.com.example.bootstrap-offline"
+  xmlns:if="ant:if"
+  xmlns:unless="ant:unless">
+  <target name="bootstrap.offline" if="offline.mode">
+    <macrodef name="offline-theme">
+      <sequential>
+        <property name="args.copycss" value="yes" />
+        <property name="args.csspath" value="css" />
+        <property name="args.css" value="offline-bootstrap.css" />
+        <property name="args.cssroot"
+          value="${dita.plugin.com.example.bootstrap-offline.dir}/include" />
+        <property name="args.hdf"
+          value="${dita.plugin.com.example.bootstrap-offline.dir}/include/offline-bootstrap-js.xml" />
+      </sequential>
+    </macrodef>
+
+    <condition property="offline.mode.no">
+      <equals arg1="${offline.mode}" arg2="no" />
+    </condition>
+
+    <offline-theme unless:set="offline.mode.no" />
+  </target>
+</project>
