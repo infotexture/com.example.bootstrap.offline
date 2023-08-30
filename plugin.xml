@@ -1,4 +1,4 @@
-<plugin id="com.example.bootstrap-offline" version="1.0.0">
+<plugin id="com.example.bootstrap-offline" version="5.3.0">
   <require plugin="net.infotexture.dita-bootstrap" />
   <feature extension="ant.import" file="process_offline.xml" />
   <feature extension="bootstrap.process.pre" value="bootstrap.offline" />
